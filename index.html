@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      // Переменные
+      // const
+      const pi = 3.14;
+      console.log(pi);
+      // let
+      let n = 10;
+      console.log(n);
+      n = 20;
+      console.log(n);
+
+      console.log("");
+
+      // Массивы
+
+      // Cоздание массива
+      const nums = [10, 20, 30, 40, 50];
+      const dNums = [10.1, 20.2, 30.3, 40.4, 50.5];
+      const colors = ["white", "black", "red", "blue"];
+      console.log(nums);
+      console.log(dNums);
+      console.log(colors);
+
+      console.log("");
+
+      // Обращение к элементам массива
+      console.log(nums[0]); // 10
+      console.log(nums[1]); // 20
+      console.log(nums[2]); // 30
+      console.log(nums[3]); // 40
+      console.log(nums[4]); // 50
+
+      console.log("");
+
+      // Изменение элементов массива
+      nums[0] = 15;
+      nums[1] = 25;
+      nums[2] = 35;
+      nums[3] = 45;
+      nums[4] = 55;
+      console.log(nums);
+
+      console.log("");
+
+      // Добавление элемента в конец массив
+      nums.push(65);
+      console.log(nums); // [15, 25, 35, 45, 55, 65]
+
+      // Удаление элемента из конца массива
+      nums.pop();
+      console.log(nums); // [15, 25, 35, 45, 55]
+
+      // Удаление элемента из начала списка
+      nums.shift();
+      console.log(nums); // [25, 35, 45, 55]
+
+      // Добавление элемента в список (в любое место)
+      // 2 - иднекс, под который мы помещаем элемент
+      // 0 - кол-во удаленных элементов (указываем 0)
+      // 40 - элемент, который добавляется
+      nums.splice(2, 0, 40);
+      console.log(nums); // [25, 35, 40, 45, 55]
+
+      // Удаление элемента из списка
+      // 2 - индекс, откуда мы начинаем удаление
+      // 1 - кол-во удаляемых элементов
+      nums.splice(2, 1);
+      console.log(nums); // [25, 35, 45, 55]
+
+      console.log("");
+
+      // Длина массива
+      console.log(nums.length); // 4
+
+      console.log("");
+
+      // for цикл
+      // 0 - 5
+      for (let i = 0; i <= 5; i++) {
+        console.log(i);
+        // 1) i = 0; 0 <= 5 (ok); log(0); i++
+        // 2) i = 1; 1 <= 5 (ok); log(1); i++
+        // 3) i = 2; 2 <= 5 (ok); log(2); i++
+        // 4) i = 3; 3 <= 5 (ok); log(3); i++
+        // 5) i = 4; 4 <= 5 (ok); log(4); i++
+        // 6) i = 5; 5 <= 5 (ok); log(5); i++
+        // 7) i = 6; 6 <= 5 (--); -----------
+      }
+
+      console.log("");
+
+      // for цикл
+      // 5 - 0
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+
+      console.log("");
+
+      animals = ["cat", "dog", "mouse", "horse", "fox"];
+
+      // Перебор элементов списка for циклом
+      for (let i = 0; i < animals.length; i++) {
+        console.log(animals[i]);
+      }
+
+      // Индекс последнего элемента
+      // Формула: длина списка - 1
+      // [6 , 8]            => 1 (2 - 1 = 1)
+      // [5, 3, 2]          => 2 (3 - 1 = 2)
+      // [1, 5, 7, 3]       => 3 (4 - 1 = 3)
+      // [8, 3, 2, 9, 4]    => 4 (5 - 1 = 4)
+
+      console.log("");
+
+      // Перебор элементов for in циклом
+      for (let i in animals) {
+        console.log(animals[i]);
+      }
+
+      console.log("");
+
+      // Перебор элементов for of циклом
+      for (let animal of animals) {
+        console.log(animal);
+      }
+
+      const offersArray = [
+        ["Crossroad Gardens", "88"],
+        ["Strawberry Mountain Lands", "57"],
+        ["Weeping Willow Acres", "39"],
+        ["Pinewood Meadow", "05"],
+        ["Broken Cart Orchard", "31"],
+        ["Rattlesnake Ranch", "47"],
+        ["Shadow Ridge Vineyard", "96"],
+        ["Peach Tree Range", "50"],
+        ["Elysian Orchard", "19"],
+      ];
+
+      offersArray.sort(function (a, b) {
+        return a[1] - b[1];
+      });
+
+      console.log(offersArray);
+
+      console.log("");
+
+      const min = 1;
+      const max = 11;
+
+
+      /*
+      while(true) {
+        спрашиваем у пользователя, хочет ли он играть
+        const answer = prompt('Tahad mängida?')
+
+        // если пользователь хочет играть, выполняем логику игры
+        if (answer == 'jah') {                                           
+
+          // генерируем случайное число от min до max (max не включительно)
+          const number = Math.floor(Math.random() * (max - min)) + min; 
+          console.log(number)
+
+          for (let i = 0; i < 3; i++) {                           // три раза
+            const userNumber = prompt("Sisesta üks number 1-10"); // просим игрока ввести число
+            if (number == userNumber) {                           // если пользователь угадал
+              console.log("Õige");                                // выводим сообщение
+              break;                                              // прекращаем спрашивать числа
+            } else if (userNumber == number - 1) {                // если введено число на 1 меньше загаданного
+              console.log("Ai, sa pakkusid väga lähedale");       // выводим соответствующее сообщение
+            } else if (userNumber == number + 1) {                // если введено число на 1 большн загаданного
+              console.log("Ai, sa pakkusid väga lähedale");       // выводим соответствующее сообщение
+            } else {                                              // если пользователь далек от загаданного числа
+              console.log("Vale");                                // выводим соответствующее сообщение
+            } 
+          }
+        } else {                                                  // если прользователь не хочет играть
+          break;                                                  // прекращаем игру
+        }
+
+      }
+      */
+
+
+      // Перебор символов строки (3 варианта):
+
+      let hello = "hello"
+
+      // for
+      for (let i = 0; i < hello.length ; i++) {
+        console.log(hello[i]);
+      }
+
+      console.log("")
+
+      // for in
+      for (let i in hello) {
+        console.log(hello[i])
+      }
+
+      console.log("")
+
+      // for of
+      for(let letter of hello) {
+        console.log(letter)
+      }
+
+      console.log("")
+
+
+
+
+      // Задание №1
+
+      const string = "xxxyyy"
+      let x = 0;
+      let y = 0;
+      for (letter of string) {      // просматриваем каждый символ строки
+        if (letter == "x") {        // если символ x
+          x += 1;                   // увеличиваем счетчик иксов
+        } else if (letter == "y") { // если символ y
+          y += 1;                   // увеличиваем счетчик игриков
+        }
+      }
+      if (x == y) {                 // если кол-во иксов и игрок равно => выводим true
+        console.log(true);
+      } else {                      // если кол-во иксов и игрок не равно => выводим false
+        console.log(false);
+      }
+
+      console.log("")
+
+
+
+      
+      // Cловари
+
+      // Создание словаря
+      animals = {"cat": 3, "dog": 5, "mouse": 10}
+
+      // Обращение к значениям словаря
+      console.log(animals["cat"]);  // 3
+      console.log(animals["dog"]);  // 5
+      console.log(animals["mouse"]);// 10
+
+      // Добавление нового ключа и значения в словарь
+      animals["turtle"] = 2;
+
+      console.log(animals); // {"cat" : 3, "dog": 5, "mouse": 10, "turtle": 2}
+
+      console.log("")
+
+      // Задание №2
+
+      const string2 = "abccbaabccba";
+      const letters = {}                  // словарь для хранения символов(ключ) и их количества(значение)
+      for(letter of string2) {            // просматриваем каждый символ в строке
+        if (letter in letters) {          // если такой символ уже есть в качестве ключа в словаре
+          letters[letter] += 1;           // увеличиваем кол-во символа
+        } else {                          // если же такого символа в словаре еще нет
+          letters[letter] = 1;            // добавляем символ в качестве ключа и говорим, что символ 1
+        }
+      } 
+
+      console.log(letters);
+      const values = Object.values(letters);  // достаем кол-во всех символов (список значений(чисел))
+      let areEqual = true;                    // предполагаем, что все числа равны
+      const firstValue = values[0];           // за основу для сравнения берем первое число
+      for (value of values) {                 // просматриваем каждое значение (число) в списке
+        if (value != firstValue) {            // как только находим число, отличное от первоначального
+          areEqual = false;                   // приходим к выводу, что сисла разные
+          break;                              // остальные числа не просматриваем
+        }
+      }
+      console.log(areEqual);                  
+     
+    </script>
+  </body>
+</html>
