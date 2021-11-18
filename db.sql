@@ -7,8 +7,7 @@ FROM (Kauplused INNER JOIN Myyjad ON Kauplused.KauplusID = Myyjad.KauplusID) INN
 
 
 
---Второе задание: Koostada SQL päring, mis väljastab konkreetse kaupluse (sisestatada 
-parameetriaknasse) noorima ostja vanuse
+--Второе задание: Koostada SQL päring, mis väljastab konkreetse kaupluse (sisestatada parameetriaknasse) noorima ostja vanuse
 
 --Вспомогательная таблица для второго задания, в которой выводим столбик магазинов, столбик покупателей магазинов и столбик с возрастом покупателей (чтобы сверять результат):
 
